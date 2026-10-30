@@ -1,0 +1,1533 @@
+/* ==========================================================================
+   FLOR DE LIZ TURISMO & CASA PREGUIÇA — DESIGN SYSTEM & STYLES
+   Estilo: Luxury Adventure Editorial & Boutique Eco-Resort
+   ========================================================================== */
+
+:root {
+  /* Cores Principais */
+  --color-bg-deep: #070B12;
+  --color-bg-surface: #0E1626;
+  --color-bg-surface-elevated: rgba(18, 27, 46, 0.75);
+  --color-bg-surface-hover: #162238;
+  --color-bg-card-border: rgba(255, 255, 255, 0.08);
+  --color-bg-card-border-hover: rgba(245, 158, 11, 0.35);
+
+  /* Seções de Alto Contraste (Areia/Linho) */
+  --color-sand-bg: #FAF7F2;
+  --color-sand-surface: #FFFFFF;
+  --color-sand-card-border: #EADBCE;
+  --color-sand-text-heading: #181E29;
+  --color-sand-text-body: #4F5868;
+  --color-sand-text-muted: #828B99;
+
+  /* Acentos da Marca */
+  --color-gold: #F59E0B;
+  --color-gold-hover: #D97706;
+  --color-gold-subtle: rgba(245, 158, 11, 0.12);
+  --color-gold-glow: rgba(245, 158, 11, 0.25);
+  
+  --color-cyan: #06B6D4;
+  --color-cyan-hover: #0891B2;
+  --color-cyan-subtle: rgba(6, 182, 212, 0.12);
+  --color-cyan-glow: rgba(6, 182, 212, 0.25);
+
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5D;
+  --color-whatsapp-glow: rgba(37, 211, 102, 0.3);
+
+  /* Tipografia & Contraste */
+  --color-text-white: #FFFFFF;
+  --color-text-heading: #F9FAFB;
+  --color-text-body: #9CA3AF;
+  --color-text-muted: #6B7280;
+
+  /* Fontes */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Sombras Profissionais com Offset e Blur Suave */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 8px 25px -4px rgba(245, 158, 11, 0.3);
+  --shadow-whatsapp: 0 8px 25px -4px rgba(37, 211, 102, 0.35);
+
+  /* Transições & Raios */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Browser Surfaces */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Seleção Tematizada */
+::selection {
+  background-color: var(--color-gold);
+  color: #000000;
+}
+
+/* Scrollbar Tematizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: #1F293D;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Links & Botões Universais */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: var(--transition-smooth);
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Tipografia Base */
+h1, h2, h3, h4 {
+  color: var(--color-text-heading);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.font-serif {
+  font-family: var(--font-display);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-cyan {
+  color: var(--color-cyan);
+}
+
+/* --------------------------------------------------------------------------
+   HEADER & NAVBAR FLUTUANTE
+   -------------------------------------------------------------------------- */
+.header-wrapper {
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0 1.25rem;
+  pointer-events: none;
+}
+
+.navbar {
+  pointer-events: auto;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.4rem;
+  background: rgba(14, 22, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--color-gold);
+}
+
+.brand-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  letter-spacing: -0.01em;
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text-heading);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-link:hover {
+  color: var(--color-gold);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-hover) 100%);
+  color: #0B0E14;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-gold);
+  transition: var(--transition-smooth);
+}
+
+.btn-header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -4px rgba(245, 158, 11, 0.45);
+  color: #000000;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-white);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION (IMERSÃO EDITORIAL)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10rem 0 4.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(7, 11, 18, 0.72) 0%, rgba(7, 11, 18, 0.4) 45%, rgba(7, 11, 18, 0.95) 100%),
+    linear-gradient(90deg, rgba(7, 11, 18, 0.65) 0%, transparent 60%);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 820px;
+  margin-bottom: 2.75rem;
+}
+
+.hero-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(12px);
+  margin-bottom: 1.5rem;
+}
+
+.stars-rating {
+  display: flex;
+  gap: 2px;
+  color: var(--color-gold);
+}
+
+.rating-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-white);
+}
+
+.rating-divider {
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-location-text {
+  font-size: 0.8rem;
+  color: var(--color-cyan);
+  font-weight: 500;
+}
+
+.hero-headline {
+  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text-white);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+.hero-headline span.accent {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+.hero-description {
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  color: #E2E8F0;
+  line-height: 1.6;
+  max-width: 680px;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.btn-primary-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-gold);
+  color: #070B12;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 1.05rem 2.2rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-gold);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary-hero:hover {
+  background: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -4px rgba(245, 158, 11, 0.45);
+}
+
+.btn-secondary-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-white);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.05rem 2rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(12px);
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary-hero:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   FLOATING BOOKING & EXPERIENCE BAR (Inspirado em Mr L Production)
+   -------------------------------------------------------------------------- */
+.booking-bar-wrapper {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+}
+
+.booking-dock {
+  background: rgba(14, 22, 38, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.75rem;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dock-item:nth-child(4) {
+  border-right: none;
+}
+
+.dock-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+.dock-input, .dock-select {
+  background: transparent;
+  border: none;
+  color: var(--color-text-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  width: 100%;
+}
+
+.dock-select option {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-white);
+}
+
+.btn-dock-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--color-whatsapp);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 1rem 1.75rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-whatsapp);
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+}
+
+.btn-dock-action:hover {
+  background: var(--color-whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -4px rgba(37, 211, 102, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   STATS & TRUST BAR (Inspirado em Nadilia / Mr L)
+   -------------------------------------------------------------------------- */
+.trust-bar {
+  background: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-bg-card-border);
+  padding: 2.25rem 0;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.trust-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: var(--color-gold-subtle);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.trust-icon-box.cyan {
+  background: var(--color-cyan-subtle);
+  border-color: rgba(6, 182, 212, 0.25);
+  color: var(--color-cyan);
+}
+
+.trust-content h4 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-text-white);
+  margin-bottom: 0.15rem;
+}
+
+.trust-content p {
+  font-size: 0.85rem;
+  color: var(--color-text-body);
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÃO SELETOR DE PÚBLICO (FAMÍLIAS, CASAIS, AMIGOS)
+   -------------------------------------------------------------------------- */
+.persona-section {
+  padding: 6.5rem 0 3.5rem;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+.persona-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+}
+
+.persona-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.persona-tab-btn.active {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #070B12;
+  font-weight: 700;
+  box-shadow: var(--shadow-gold);
+}
+
+.persona-tab-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-white);
+}
+
+.persona-badge-featured {
+  background: #070B12;
+  color: var(--color-gold);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  margin-left: 0.35rem;
+}
+
+.persona-panel {
+  display: none;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-bg-card-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.persona-panel.active {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.persona-panel-content {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.persona-heading {
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 1rem;
+}
+
+.persona-body {
+  font-size: 1.05rem;
+  color: var(--color-text-body);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.persona-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.persona-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.persona-check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--color-gold-subtle);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.persona-highlight-item strong {
+  color: var(--color-text-white);
+}
+
+.persona-panel-media {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.persona-panel-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.persona-panel:hover .persona-panel-media img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÃO 2: O REFÚGIO PRIVATIVO (CASA PREGUIÇA)
+   -------------------------------------------------------------------------- */
+.refugio-section {
+  padding: 7rem 0;
+  position: relative;
+  background: linear-gradient(180deg, var(--color-bg-deep) 0%, #0A101C 50%, var(--color-bg-deep) 100%);
+}
+
+.refugio-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.refugio-gallery-mosaic {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: repeat(2, 240px);
+  gap: 1.25rem;
+}
+
+.mosaic-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-bg-card-border);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.mosaic-item.main {
+  grid-row: span 2;
+}
+
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mosaic-item:hover img {
+  transform: scale(1.05);
+}
+
+.mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(7, 11, 18, 0.85) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  transition: var(--transition-smooth);
+}
+
+.mosaic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.refugio-details h2 {
+  font-size: clamp(2.1rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 1.25rem;
+}
+
+.refugio-details p {
+  font-size: 1.1rem;
+  color: var(--color-text-body);
+  margin-bottom: 2.25rem;
+  line-height: 1.65;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.amenity-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-bg-card-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+}
+
+.amenity-card:hover {
+  border-color: var(--color-bg-card-border-hover);
+  transform: translateY(-2px);
+}
+
+.amenity-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--color-gold-subtle);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.amenity-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 0.2rem;
+}
+
+.amenity-info p {
+  font-size: 0.85rem;
+  color: var(--color-text-body);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÃO 3: ROTEIROS & AVENTURA OFF-ROAD (QUADRICICLOS E UTVS)
+   -------------------------------------------------------------------------- */
+.aventura-section {
+  padding: 7rem 0;
+  position: relative;
+  background: var(--color-bg-deep);
+}
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.tour-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-bg-card-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+}
+
+.tour-card:hover {
+  border-color: var(--color-bg-card-border-hover);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tour-media {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.tour-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tour-card:hover .tour-media img {
+  transform: scale(1.08);
+}
+
+.tour-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(7, 11, 18, 0.8);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.tour-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tour-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.82rem;
+  color: var(--color-cyan);
+  font-weight: 600;
+}
+
+.tour-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tour-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 0.75rem;
+}
+
+.tour-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.tour-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tour-fleet-tag {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.tour-fleet-tag strong {
+  color: var(--color-text-white);
+}
+
+.btn-tour-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  transition: var(--transition-smooth);
+}
+
+.btn-tour-cta:hover {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÃO 4: SEGURANÇA & PARCERIA OFICINA PLANETA OFFROAD
+   -------------------------------------------------------------------------- */
+.safety-banner-section {
+  padding: 4.5rem 0;
+  position: relative;
+}
+
+.safety-card-banner {
+  background: linear-gradient(135deg, #111A2E 0%, #0B1220 100%);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.safety-card-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.safety-info h2 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 1.2rem;
+}
+
+.safety-info p {
+  font-size: 1.05rem;
+  color: var(--color-text-body);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.safety-points-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.safety-point-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.safety-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--color-cyan-subtle);
+  color: var(--color-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.safety-point-text h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 0.2rem;
+}
+
+.safety-point-text p {
+  font-size: 0.82rem;
+  color: var(--color-text-body);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÃO 5: DIÁRIO DE VIAJANTES & PROVA SOCIAL (FORMATO POLAROID)
+   -------------------------------------------------------------------------- */
+.reviews-section {
+  padding: 6.5rem 0;
+  background: linear-gradient(180deg, var(--color-bg-deep) 0%, #0A111F 100%);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.review-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-bg-card-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.review-card:hover {
+  border-color: var(--color-bg-card-border-hover);
+  transform: translateY(-4px);
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.review-quote {
+  font-size: 1rem;
+  color: #E2E8F0;
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.reviewer-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.25rem;
+}
+
+.reviewer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-gold-subtle);
+  border: 1px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--color-gold);
+  font-size: 1.1rem;
+}
+
+.reviewer-info h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 0.15rem;
+}
+
+.reviewer-info p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÃO FINAL: CTA DE FECHAMENTO (CALL TO ACTION)
+   -------------------------------------------------------------------------- */
+.cta-closing-section {
+  padding: 6.5rem 0 8rem;
+  position: relative;
+}
+
+.cta-box-card {
+  position: relative;
+  background: 
+    linear-gradient(180deg, rgba(7, 11, 18, 0.75) 0%, rgba(7, 11, 18, 0.95) 100%),
+    url('imagens/Pequenos-Lencois-Maranhenses-1080x1000.webp') center/cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 5rem 3rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-box-content {
+  position: relative;
+  z-index: 10;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-box-content h2 {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--color-text-white);
+  margin-bottom: 1.25rem;
+}
+
+.cta-box-content p {
+  font-size: 1.2rem;
+  color: #E2E8F0;
+  margin-bottom: 2.75rem;
+  line-height: 1.6;
+}
+
+.btn-whatsapp-giant {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--color-whatsapp);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 1.25rem 2.8rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-whatsapp);
+  transition: var(--transition-smooth);
+}
+
+.btn-whatsapp-giant:hover {
+  background: var(--color-whatsapp-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 40px -6px rgba(37, 211, 102, 0.5);
+}
+
+.cta-guarantee-note {
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   RODAPÉ (FOOTER)
+   -------------------------------------------------------------------------- */
+.footer-main {
+  background: #04070D;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5rem 0 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-col-brand p {
+  font-size: 0.92rem;
+  color: var(--color-text-body);
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+  max-width: 320px;
+}
+
+.social-links-list {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-white);
+  transition: var(--transition-smooth);
+}
+
+.social-link-btn:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #070B12;
+  transform: translateY(-2px);
+}
+
+.footer-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 1.4rem;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav-list a {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+}
+
+.footer-nav-list a:hover {
+  color: var(--color-gold);
+  padding-left: 4px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  margin-bottom: 1rem;
+}
+
+.footer-contact-item svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   WHATSAPP FLOATING BUTTON
+   -------------------------------------------------------------------------- */
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-whatsapp);
+  color: #FFFFFF;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-whatsapp);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.whatsapp-floating-btn:hover {
+  background: var(--color-whatsapp-hover);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px -4px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-pulse-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-whatsapp);
+  opacity: 0.4;
+  animation: pulsePing 2.5s infinite;
+  z-index: -1;
+}
+
+@keyframes pulsePing {
+  0% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   LIGHTBOX MODAL
+   -------------------------------------------------------------------------- */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 13, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 1000px;
+  max-height: 85vh;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-close-btn:hover {
+  background: var(--color-gold);
+  color: #000000;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE (MOBILE & TABLET)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .booking-dock {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dock-item:nth-child(2) {
+    border-right: none;
+  }
+  .dock-item {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .btn-dock-action {
+    grid-column: span 2;
+  }
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .refugio-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .safety-card-banner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .btn-header-cta {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .booking-dock {
+    grid-template-columns: 1fr;
+  }
+  .dock-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.75rem;
+  }
+  .btn-dock-action {
+    grid-column: span 1;
+  }
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .persona-panel.active {
+    grid-template-columns: 1fr;
+  }
+  .persona-panel-content {
+    padding: 2rem;
+  }
+  .persona-panel-media {
+    min-height: 280px;
+  }
+  .refugio-gallery-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .mosaic-item.main {
+    grid-row: span 1;
+    height: 280px;
+  }
+  .mosaic-item {
+    height: 200px;
+  }
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+  .tours-grid {
+    grid-template-columns: 1fr;
+  }
+  .safety-points-grid {
+    grid-template-columns: 1fr;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .whatsapp-floating-btn span {
+    display: none;
+  }
+  .whatsapp-floating-btn {
+    padding: 1rem;
+  }
+}
+

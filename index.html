@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flor de Liz Turismo & Casa Preguiça — Hospedagem Exclusiva e Expedições nos Lençóis Maranhenses</title>
+  <meta name="description" content="Viva os Lençóis Maranhenses com exclusividade. Hospedagem privativa de alto padrão na Casa Preguiça com piscina privativa e expedições off-road com frota própria de Quadriciclos e UTVs em Barreirinhas - MA.">
+
+  <!-- Favicon com logo oficial -->
+  <link rel="icon" type="image/jpeg" href="imagens/logo-flor-de-lis.jpg">
+
+  <!-- Google Fonts de Alto Padrão (Playfair Display + Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       HEADER / NAVBAR FLUTUANTE (Pill Nav inspirada em Mr L & Nadilia)
+       ========================================================================= -->
+  <header class="header-wrapper">
+    <nav class="navbar" aria-label="Navegação Principal">
+      <a href="#hero" class="nav-brand">
+        <img src="imagens/logo-flor-de-lis.jpg" alt="Logo Flor de Liz Turismo" class="brand-logo-img">
+        <div class="brand-text-group">
+          <span class="brand-title">Flor de Liz</span>
+          <span class="brand-subtitle">Turismo & Hospedagem</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#experiencias" class="nav-link">Experiências</a></li>
+        <li><a href="#refugio" class="nav-link">Casa Preguiça</a></li>
+        <li><a href="#roteiros" class="nav-link">Passeios Off-Road</a></li>
+        <li><a href="#seguranca" class="nav-link">Segurança & Frota</a></li>
+        <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20disponibilidade%20para%20minha%20viagem%20a%20Barreirinhas." target="_blank" rel="noopener noreferrer" class="btn-header-cta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>Falar no WhatsApp</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="nav-brand">
+        <img src="imagens/logo-flor-de-lis.jpg" alt="Logo Flor de Liz" class="brand-logo-img">
+        <span class="brand-title">Flor de Liz</span>
+      </div>
+      <button class="mobile-close-btn" id="mobileClose" aria-label="Fechar Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#experiencias" class="mobile-nav-link">Experiências</a></li>
+      <li><a href="#refugio" class="mobile-nav-link">Casa Preguiça</a></li>
+      <li><a href="#roteiros" class="mobile-nav-link">Passeios Off-Road</a></li>
+      <li><a href="#seguranca" class="mobile-nav-link">Segurança & Frota</a></li>
+      <li><a href="#depoimentos" class="mobile-nav-link">Depoimentos</a></li>
+      <li>
+        <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Quero%20planejar%20minha%20viagem%20com%20a%20Flor%20de%20Liz." target="_blank" rel="noopener noreferrer" class="btn-dock-action" style="margin-top: 1rem; width: 100%;">
+          Falar com Consultor no WhatsApp
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         HERO SECTION (IMERSÃO EDITORIAL & DOCK DE RESERVA)
+         ========================================================================= -->
+    <section class="hero-section" id="hero" style="background-image: url('imagens/hero-lencois-adventure.jpg');">
+      <div class="hero-backdrop"></div>
+      
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-social-pill">
+            <div class="stars-rating">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <span class="rating-text">4.9/5 • Mais de 500+ viajantes</span>
+            <div class="rating-divider"></div>
+            <span class="hero-location-text">Barreirinhas • Lençóis Maranhenses</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Lençóis Maranhenses com a exclusividade e o descanso <span class="accent">que sua viagem merece.</span>
+          </h1>
+
+          <p class="hero-description">
+            A única solução All-in-One em Barreirinhas: hospedagem privativa de alto padrão na <strong>Casa Preguiça</strong> com piscina privativa e expedições off-road com frota própria de <strong>Quadriciclos e UTVs</strong> com suporte mecânico especializado.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20reservar%20minha%20experi%C3%AAncia%20na%20Flor%20de%20Liz%20Turismo." target="_blank" rel="noopener noreferrer" class="btn-primary-hero">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Reservar Experiência</span>
+            </a>
+            <a href="#refugio" class="btn-secondary-hero">
+              <span>Conhecer a Casa Preguiça</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- DOCK DE CONSULTA & RESERVA (Inspirado no modelo Mr L Production) -->
+        <div class="booking-bar-wrapper">
+          <form class="booking-dock" id="bookingDockForm">
+            <div class="dock-item">
+              <span class="dock-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Experiência
+              </span>
+              <select class="dock-select" id="dockExperience">
+                <option value="Hospedagem Casa Preguiça + Passeios Off-Road">Casa Preguiça + Passeios (All-in-One)</option>
+                <option value="Apenas Hospedagem Privativa Casa Preguiça">Hospedagem Exclusiva Casa Preguiça</option>
+                <option value="Apenas Expedições em Quadriciclos e UTVs">Passeios Off-road (Quadris & UTVs)</option>
+                <option value="Pacote Completo sob Medida">Roteiro Personalizado sob Medida</option>
+              </select>
+            </div>
+
+            <div class="dock-item">
+              <span class="dock-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Viajantes
+              </span>
+              <select class="dock-select" id="dockGuests">
+                <option value="Família Completa (4 a 12 pessoas)">Família (4 a 12 pessoas)</option>
+                <option value="Casal (2 pessoas)">Casal (2 pessoas)</option>
+                <option value="Grupo de Amigos (Off-road)">Grupo de Amigos (4+ pessoas)</option>
+                <option value="Outro formato">Outro formato</option>
+              </select>
+            </div>
+
+            <div class="dock-item">
+              <span class="dock-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Período da Viagem
+              </span>
+              <input type="text" class="dock-input" id="dockPeriod" placeholder="Ex: Julho / Réveillon / Fim de semana">
+            </div>
+
+            <div class="dock-item">
+              <span class="dock-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Canal Direto
+              </span>
+              <div style="font-weight: 600; color: #FFFFFF; font-size: 0.95rem;">WhatsApp Oficial (98) 98451-2420</div>
+            </div>
+
+            <button type="submit" class="btn-dock-action">
+              <span>Consultar Disponibilidade</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BARRA DE CREDIBILIDADE & DIFERENCIAIS (Trust Bar)
+         ========================================================================= -->
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <div class="trust-content">
+              <h4>Hospedagem 100% Privativa</h4>
+              <p>A Casa Preguiça é exclusiva para o seu grupo.</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            </div>
+            <div class="trust-content">
+              <h4>Frota Própria Sem Terceiros</h4>
+              <p>Quadris e UTVs modernos sob nosso comando.</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <div class="trust-content">
+              <h4>Suporte Planeta Offroad</h4>
+              <p>Manutenção preventiva e socorro técnico ágil.</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="trust-content">
+              <h4>Translado Próprio em Van</h4>
+              <p>Conforto e segurança do início ao fim.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SELETOR DE EXPERIÊNCIA POR PÚBLICO (FAMÍLIAS, CASAIS, AVENTUREIROS)
+         ========================================================================= -->
+    <section class="persona-section" id="experiencias">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Experiências Desenhadas para o Seu Estilo</h2>
+          <p class="section-subtitle">
+            Seja para reunir a família inteira com tranquilidade absoluta, viver dias inesquecíveis a dois ou acelerar pelas dunas em grupo, nós temos a estrutura sob medida.
+          </p>
+        </div>
+
+        <div class="persona-tabs-nav">
+          <button class="persona-tab-btn active" data-target="tabFamilias">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Famílias & Grupos</span>
+            <span class="persona-badge-featured">Mais Escolhido</span>
+          </button>
+
+          <button class="persona-tab-btn" data-target="tabCasais">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span>Casais & Lua de Mel</span>
+          </button>
+
+          <button class="persona-tab-btn" data-target="tabAventura">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span>Amigos & Off-Road</span>
+          </button>
+        </div>
+
+        <!-- Painel 1: FAMÍLIAS & GRUPOS (Carro-chefe) -->
+        <div class="persona-panel active" id="tabFamilias">
+          <div class="persona-panel-content">
+            <h3 class="persona-heading">Privacidade total e conforto para quem você mais ama</h3>
+            <p class="persona-body">
+              Viajar com crianças e familiares exige conforto, segurança e logística simplificada. Na <strong>Casa Preguiça</strong>, você não divide piscina ou áreas comuns com estranhos: a casa é 100% privativa para o seu grupo, com suítes climatizadas, energia solar sustentável e passeios organizados no seu ritmo.
+            </p>
+            <ul class="persona-highlights">
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Piscina privativa cristalina</strong> com área de sol e espaço seguro para as crianças brincarem à vontade.
+                </div>
+              </li>
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Suítes climatizadas e silenciosas</strong> para o descanso perfeito após o sol dos Lençóis.
+                </div>
+              </li>
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Translado próprio em van executiva</strong> do aeroporto ou hotel direto para Barreirinhas.
+                </div>
+              </li>
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Passeios no tempo da sua família</strong> sem pressa ou horários engessados de agências convencionais.
+                </div>
+              </li>
+            </ul>
+            <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20a%20Casa%20Pregui%C3%A7a%20para%20minha%20Fam%C3%ADlia.%20Poderiam%20me%20enviar%20valores%20e%20disponibilidade?" target="_blank" rel="noopener noreferrer" class="btn-dock-action" style="align-self: flex-start;">
+              <span>Planejar Férias em Família no WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+          <div class="persona-panel-media">
+            <img src="imagens/casa-preguica-pool.jpg" alt="Piscina privativa iluminada da Casa Preguiça">
+          </div>
+        </div>
+
+        <!-- Painel 2: CASAIS -->
+        <div class="persona-panel" id="tabCasais">
+          <div class="persona-panel-content">
+            <h3 class="persona-heading">Romance, sossego e pores do sol inesquecíveis</h3>
+            <p class="persona-body">
+              Os Lençóis Maranhenses são um dos cenários mais poéticos do planeta. Para casais que buscam uma experiência intimista longe da agitação de hotéis tradicionais, preparamos roteiros com paradas exclusivas em lagoas desertas e suítes acolhedoras para brindar ao entardecer.
+            </p>
+            <ul class="persona-highlights">
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Pôr do sol cinematográfico nas dunas</strong> em pontos selecionados longe das multidões.
+                </div>
+              </li>
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Passeios privativos em Quadriciclos e UTVs</strong> com paradas para banho em lagoas de água morna.
+                </div>
+              </li>
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Aconchego e tranquilidade noturna</strong> ao redor da piscina e varanda privativa.
+                </div>
+              </li>
+            </ul>
+            <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Gostaria%20de%20organizar%20uma%20viagem%20rom%C3%A2ntica%20a%20dois%20para%20os%20Len%C3%A7%C3%B3is%20Maranhenses." target="_blank" rel="noopener noreferrer" class="btn-dock-action" style="align-self: flex-start;">
+              <span>Planejar Roteiro de Casal no WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+          <div class="persona-panel-media">
+            <img src="imagens/lencois-maranhenses.webp" alt="Lençóis Maranhenses e encontro do rio com o mar">
+          </div>
+        </div>
+
+        <!-- Painel 3: AVENTURA OFF-ROAD -->
+        <div class="persona-panel" id="tabAventura">
+          <div class="persona-panel-content">
+            <h3 class="persona-heading">Adrenalina real com veículos de ponta e suporte total</h3>
+            <p class="persona-body">
+              Se o seu objetivo é acelerar pelas trilhas de areia, cruzar rios e dunas gigantes até Atins e Caburé, a Flor de Liz é a autoridade local. Nossa frota própria conta com o respaldo e revisão da <strong>Oficina Planeta Offroad</strong>, garantindo potência, segurança e assistência técnica mecânica em tempo real.
+            </p>
+            <ul class="persona-highlights">
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Quadriciclos 4x4 e UTVs potentes</strong> constantemente inspecionados para alta performance.
+                </div>
+              </li>
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Guias locais credenciados</strong> que conhecem cada centímetro das trilhas e melhores horários de maré.
+                </div>
+              </li>
+              <li class="persona-highlight-item">
+                <span class="persona-check-icon">✓</span>
+                <div>
+                  <strong>Expedições de dia inteiro</strong> até praias selvagens e lagoas preservadas.
+                </div>
+              </li>
+            </ul>
+            <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Tenho%20um%20grupo%20e%20queremos%20fechar%20uma%20expedi%C3%A7%C3%A3o%20Off-Road%20de%20Quadriciclo/UTV." target="_blank" rel="noopener noreferrer" class="btn-dock-action" style="align-self: flex-start;">
+              <span>Reservar Expedição Off-Road no WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+          <div class="persona-panel-media">
+            <img src="imagens/dunas-quadri-aventura.jpg" alt="Passeio guiado de quadriciclos nas dunas dos Pequenos Lençóis">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 2: O REFÚGIO PRIVATIVO (CASA PREGUIÇA)
+         ========================================================================= -->
+    <section class="refugio-section" id="refugio">
+      <div class="container">
+        <div class="refugio-grid">
+          <div class="refugio-gallery-mosaic">
+            <div class="mosaic-item main" data-lightbox-src="imagens/casa-preguica-pool.jpg">
+              <img src="imagens/casa-preguica-pool.jpg" alt="Piscina privativa Casa Preguiça">
+              <div class="mosaic-overlay">
+                <span class="mosaic-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  Piscina Privativa Exclusiva
+                </span>
+              </div>
+            </div>
+
+            <div class="mosaic-item" data-lightbox-src="imagens/suite-master-luxo.jpg">
+              <img src="imagens/suite-master-luxo.jpg" alt="Suíte climatizada master">
+              <div class="mosaic-overlay">
+                <span class="mosaic-badge">Suítes Climatizadas</span>
+              </div>
+            </div>
+
+            <div class="mosaic-item" data-lightbox-src="imagens/casa-preguica-aerea-real.jpg">
+              <img src="imagens/casa-preguica-aerea-real.jpg" alt="Vista aérea real da Casa Preguiça com placas solares e quadris">
+              <div class="mosaic-overlay">
+                <span class="mosaic-badge">Energia Solar & Estrutura Real</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="refugio-details">
+            <h2>Seu Santuário Particular em Barreirinhas</h2>
+            <p>
+              O verdadeiro luxo em Barreirinhas é retornar de uma expedição intensa pelas dunas e encontrar o silêncio, a água fresca da piscina e suítes climatizadas prontas para recebê-lo. A <strong>Casa Preguiça</strong> foi concebida para oferecer descanso autêntico sem as distrações e aglomerações da hotelaria comum.
+            </p>
+
+            <div class="amenities-grid">
+              <div class="amenity-card">
+                <div class="amenity-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+                </div>
+                <div class="amenity-info">
+                  <h4>Piscina Exclusiva</h4>
+                  <p>Área de deck privativa com espreguiçadeiras e jardim tropical.</p>
+                </div>
+              </div>
+
+              <div class="amenity-card">
+                <div class="amenity-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <div class="amenity-info">
+                  <h4>Suítes Climatizadas</h4>
+                  <p>Ar-condicionado moderno, camas confortáveis e lençóis selecionados.</p>
+                </div>
+              </div>
+
+              <div class="amenity-card">
+                <div class="amenity-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </div>
+                <div class="amenity-info">
+                  <h4>Energia Solar</h4>
+                  <p>Sustentabilidade e fornecimento contínuo de energia limpa.</p>
+                </div>
+              </div>
+
+              <div class="amenity-card">
+                <div class="amenity-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="amenity-info">
+                  <h4>Privacidade Total</h4>
+                  <p>Sem áreas compartilhadas. O refúgio é inteiramente seu.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Gostaria%20de%20ver%20mais%20fotos%20e%20saber%20valores%20para%20reservar%20a%20Casa%20Pregui%C3%A7a." target="_blank" rel="noopener noreferrer" class="btn-primary-hero">
+              <span>Consultar Tarifário da Casa Preguiça</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 3: ROTEIROS & AVENTURA OFF-ROAD
+         ========================================================================= -->
+    <section class="aventura-section" id="roteiros">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Expedições Off-Road com Frota Própria</h2>
+          <p class="section-subtitle">
+            Pilote ou relaxe na carona dos veículos mais modernos da região. Roteiros conduzidos por guias experientes e respaldados pela Oficina Planeta Offroad.
+          </p>
+        </div>
+
+        <div class="tours-grid">
+          <!-- Roteiro 1 -->
+          <div class="tour-card">
+            <div class="tour-media">
+              <img src="imagens/Pequenos-Lencois-Maranhenses-1080x1000.webp" alt="Pequenos Lençóis Maranhenses">
+              <span class="tour-badge">Mais Procurado</span>
+            </div>
+            <div class="tour-content">
+              <div class="tour-meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Meio Período (4h)
+                </span>
+                <span>• Nível Moderado</span>
+              </div>
+              <h3 class="tour-title">Circuito Pequenos Lençóis & Vassouras</h3>
+              <p class="tour-desc">
+                Trilhas de areia fofa, lagoas de águas mornas, dunas douradas e a famosa parada em Vassouras com a recepção acolhedora dos macacos-prego na floresta de mangue.
+              </p>
+              <div class="tour-footer">
+                <span class="tour-fleet-tag">Veículos: <strong>Quadri ou UTV</strong></span>
+                <a href="#" class="btn-tour-cta" data-tour-name="Circuito Pequenos Lençóis e Vassouras">
+                  <span>Consultar</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Roteiro 2 -->
+          <div class="tour-card">
+            <div class="tour-media">
+              <img src="imagens/hero-lencois-adventure.jpg" alt="Pôr do Sol nos Lençóis Maranhenses">
+              <span class="tour-badge">Experiência VIP</span>
+            </div>
+            <div class="tour-content">
+              <div class="tour-meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Tarde Inteira (5h)
+                </span>
+                <span>• Cenário Épico</span>
+              </div>
+              <h3 class="tour-title">Circuito Lagoa Bonita & Pôr do Sol</h3>
+              <p class="tour-desc">
+                Subida das dunas mais imponentes do Parque Nacional, banho relaxante em lagoas profundas e um espetáculo inesquecível ao assistir o sol se pôr sobre a imensidão branca.
+              </p>
+              <div class="tour-footer">
+                <span class="tour-fleet-tag">Veículos: <strong>Quadriciclo 4x4</strong></span>
+                <a href="#" class="btn-tour-cta" data-tour-name="Circuito Lagoa Bonita e Pôr do Sol">
+                  <span>Consultar</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Roteiro 3 -->
+          <div class="tour-card">
+            <div class="tour-media">
+              <img src="imagens/lencois-maranhenses.webp" alt="Travessia para Atins e foz do Rio Preguiças">
+              <span class="tour-badge">Dia Inteiro</span>
+            </div>
+            <div class="tour-content">
+              <div class="tour-meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Dia Inteiro (8h)
+                </span>
+                <span>• Aventura Completa</span>
+              </div>
+              <h3 class="tour-title">Travessia Off-Road Caburé & Atins</h3>
+              <p class="tour-desc">
+                A expedição definitiva: praias desertas, o encontro das águas doces com o oceano atlântico, gastronomia de frutos do mar em Atins e trilhas de pura emoção.
+              </p>
+              <div class="tour-footer">
+                <span class="tour-fleet-tag">Veículos: <strong>UTV ou Quadri</strong></span>
+                <a href="#" class="btn-tour-cta" data-tour-name="Travessia Caburé e Atins">
+                  <span>Consultar</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 4: SEGURANÇA & PARCERIA OFICINA PLANETA OFFROAD
+         ========================================================================= -->
+    <section class="safety-banner-section" id="seguranca">
+      <div class="container">
+        <div class="safety-card-banner">
+          <div class="safety-info">
+            <h2>Sua Segurança em Primeiro Lugar: Parceria Planeta Offroad</h2>
+            <p>
+              Em terrenos desafiadores como as dunas e mangues dos Lençóis, a manutenção preventiva faz toda a diferença. Ao contrário de locadores informais, todos os nossos veículos passam por rigorosa inspeção técnica da <strong>Oficina Planeta Offroad</strong> antes de cada saída.
+            </p>
+
+            <div class="safety-points-grid">
+              <div class="safety-point-card">
+                <div class="safety-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                </div>
+                <div class="safety-point-text">
+                  <h4>Revisão Diária</h4>
+                  <p>Freios, suspensão e tração 4x4 testados diariamente.</p>
+                </div>
+              </div>
+
+              <div class="safety-point-card">
+                <div class="safety-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="safety-point-text">
+                  <h4>Equipamentos Certificados</h4>
+                  <p>Capacetes higienizados e óculos adequados para areia.</p>
+                </div>
+              </div>
+
+              <div class="safety-point-card">
+                <div class="safety-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                </div>
+                <div class="safety-point-text">
+                  <h4>Socorro Rápido</h4>
+                  <p>Veículo de suporte e equipe mecânica de prontidão.</p>
+                </div>
+              </div>
+
+              <div class="safety-point-card">
+                <div class="safety-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                </div>
+                <div class="safety-point-text">
+                  <h4>Guias Nativos</h4>
+                  <p>Instrutores experientes e pacientes com iniciantes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: var(--shadow-lg);">
+            <img src="imagens/parceria-planeta-offroad.jpg" alt="Parceria Oficial Recanto Flor de Liz e Oficina Planeta Offroad">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO 5: DIÁRIO DE VIAJANTES & DEPOIMENTOS REAIS
+         ========================================================================= -->
+    <section class="reviews-section" id="depoimentos">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">O Que Dizem os Nossos Viajantes</h2>
+          <p class="section-subtitle">
+            Histórias reais de quem confiou suas férias e momentos especiais ao acolhimento da Flor de Liz.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Ficamos na Casa Preguiça com a família inteira (8 pessoas) e foi simplesmente impecável. A piscina privativa fez toda a diferença com as crianças depois dos passeios. Os quadriciclos estavam novos e o guia foi super atencioso!"
+            </p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">MS</div>
+              <div class="reviewer-info">
+                <h4>Marcelo Silveira</h4>
+                <p>São Paulo • Família de 8 pessoas</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Fizemos a viagem de lua de mel e foi mágico. O passeio ao pôr do sol na Lagoa Bonita parecia uma pintura. Chegar na suíte climatizada e ter a casa só para nós foi o ponto alto de Barreirinhas."
+            </p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">CL</div>
+              <div class="reviewer-info">
+                <h4>Camila & Leonardo</h4>
+                <p>Belo Horizonte • Casal</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Já fiz passeios de quadri em vários lugares do Brasil, mas a estrutura da Flor de Liz com o suporte da Planeta Offroad é de outro nível. Máquinas com motor forte, segurança total e trilha até Atins espetacular!"
+            </p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar">RF</div>
+              <div class="reviewer-info">
+                <h4>Rodrigo Fontes</h4>
+                <p>Curitiba • Grupo de Amigos Off-Road</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO FINAL: CTA DE FECHAMENTO (CALL TO ACTION)
+         ========================================================================= -->
+    <section class="cta-closing-section">
+      <div class="container">
+        <div class="cta-box-card">
+          <div class="cta-box-content">
+            <h2>Pronto para viver os Lençóis Maranhenses do jeito certo?</h2>
+            <p>
+              As reservas da Casa Preguiça e as vagas para expedições em quadris são limitadas por data para garantir exclusividade e atenção individual a cada viajante. Fale diretamente com nossa equipe no WhatsApp agora mesmo.
+            </p>
+            <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Gostaria%20de%20montar%20meu%20roteiro%20personalizado%20com%20a%20Flor%20de%20Liz%20Turismo." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-giant">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Falar no WhatsApp (98) 98451-2420</span>
+            </a>
+            <div class="cta-guarantee-note">
+              Atendimento ágil e personalizado • Sem taxas ocultas • Resposta rápida
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       RODAPÉ (FOOTER)
+       ========================================================================= -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <div class="nav-brand">
+            <img src="imagens/logo-flor-de-lis.jpg" alt="Logo Flor de Liz" class="brand-logo-img">
+            <div class="brand-text-group">
+              <span class="brand-title">Flor de Liz Turismo</span>
+              <span class="brand-subtitle">Recanto Flor de Liz • Casa Preguiça</span>
+            </div>
+          </div>
+          <p>
+            Turismo de aventura e hospedagem privativa de alto padrão em Barreirinhas - Maranhão. O seu descanso começa aqui.
+          </p>
+          <div class="social-links-list">
+            <a href="https://www.instagram.com/flordelizturismobr" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Instagram Flor de Liz Turismo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.instagram.com/recantoflordelizbr" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Instagram Recanto Flor de Liz">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navegação</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#experiencias">Experiências</a></li>
+            <li><a href="#refugio">A Casa Preguiça</a></li>
+            <li><a href="#roteiros">Passeios Off-Road</a></li>
+            <li><a href="#seguranca">Segurança & Frota</a></li>
+            <li><a href="#depoimentos">Avaliações</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Experiências</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#experiencias">Para Famílias & Grupos</a></li>
+            <li><a href="#experiencias">Para Casais em Lua de Mel</a></li>
+            <li><a href="#roteiros">Circuito Lagoa Bonita</a></li>
+            <li><a href="#roteiros">Pequenos Lençóis & Vassouras</a></li>
+            <li><a href="#roteiros">Travessia Atins & Caburé</a></li>
+            <li><a href="#seguranca">Parceria Planeta Offroad</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contato & Localização</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Barreirinhas – Maranhão<br>Portal dos Lençóis Maranhenses</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>WhatsApp: (98) 98451-2420</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg>
+            <span>@flordelizturismobr</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Flor de Liz Turismo & Recanto Flor de Liz. Todos os direitos reservados.</div>
+        <div>Barreirinhas - Lençóis Maranhenses, Brasil.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       BOTÃO FLUTUANTE DE WHATSAPP (PERSISTENTE COM PULSE)
+       ========================================================================= -->
+  <a href="https://wa.me/5598984512420?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Flor%20de%20Liz%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20hospedagem%20e%20passeios." target="_blank" rel="noopener noreferrer" class="whatsapp-floating-btn" aria-label="Falar pelo WhatsApp">
+    <div class="whatsapp-pulse-ping"></div>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span>Falar com Consultor</span>
+  </a>
+
+  <!-- =========================================================================
+       LIGHTBOX MODAL PARA FOTOS EM ALTA RESOLUÇÃO
+       ========================================================================= -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close-btn" id="lightboxClose" aria-label="Fechar">✕</button>
+    <div class="lightbox-content">
+      <img src="" alt="Visualização em Alta Resolução" id="lightboxImg">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
